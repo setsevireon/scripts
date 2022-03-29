@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source ../lib.bash
+source "$(dirname "${BASH_SOURCE[0]}")/../lib.bash"
 
 printf "Script dir: %s\n" "$(scriptdir)"
 printf "Script path: %s\n" "$(scriptfile)"
@@ -11,3 +11,4 @@ echo "foo" >"$(workingdir)/foo.txt"
 echo "=== foo ==="
 cat "$(workingdir)/foo.txt"
 echo "==========="
+workingdir_rm

@@ -56,3 +56,16 @@ function workingdir {
 
 	printf "%q" "${dirpath}"
 }
+
+###############################################################################
+# Remove the temporary working directory.
+###############################################################################
+function workingdir_rm {
+	declare dirname
+	declare dirpath
+
+	dirname="$(scriptname)_${PPID}"
+	dirpath="/tmp/${dirname}"
+
+	rm -fr "${dirpath}"
+}
